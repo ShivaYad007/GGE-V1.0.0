@@ -20,7 +20,8 @@
     // Load saved preference, default dark
     applyTheme(localStorage.getItem('gg-theme') || 'dark');
 
-    themeToggle.addEventListener('click', () => {
+    themeToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
       const isLight = document.documentElement.classList.contains('light');
       applyTheme(isLight ? 'dark' : 'light');
     });
@@ -43,7 +44,8 @@
       document.body.style.overflow = '';
     }
 
-    hamburger.addEventListener('click', () => {
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
       mobileMenu.classList.contains('open') ? closeMobileMenu() : openMobileMenu();
     });
 

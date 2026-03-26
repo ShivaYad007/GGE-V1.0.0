@@ -72,6 +72,13 @@
       </div>
 
     </div><!-- /.hero-content -->
+
+    <!-- Scroll Down Cue -->
+    <div class="scroll-cue">
+      <span class="scroll-cue-text">Scroll</span>
+      <div class="scroll-cue-line"></div>
+    </div>
+
   </section>
 
   <!-- ABOUT -->
@@ -321,17 +328,17 @@
           <div class="contact-form" id="contact-form">
             <div class="form-row">
               <div class="field">
-                <input class="contact-input" type="text" id="f-name" placeholder="Your name" autocomplete="name" />
+                <input class="contact-input" type="text" id="f-name" placeholder="Your name" autocomplete="name" required />
                 <span class="field-error" id="err-name"></span>
               </div>
               <div class="field">
-                <input class="contact-input" type="email" id="f-email" placeholder="Email address" autocomplete="email" />
+                <input class="contact-input" type="email" id="f-email" placeholder="Email address" autocomplete="email" required />
                 <span class="field-error" id="err-email"></span>
               </div>
             </div>
             <div class="form-row">
               <div class="field">
-                <input class="contact-input" type="tel" id="f-phone" placeholder="Phone number" autocomplete="tel" />
+                <input class="contact-input" type="tel" id="f-phone" placeholder="Phone number" autocomplete="tel" required />
                 <span class="field-error" id="err-phone"></span>
               </div>
               <div class="field">
@@ -339,7 +346,7 @@
               </div>
             </div>
             <div class="field">
-              <textarea class="contact-input" id="f-message" rows="5" placeholder="Tell me home your energy goals or questions..."></textarea>
+              <textarea class="contact-input" id="f-message" rows="5" placeholder="Tell me home your energy goals or questions..." required></textarea>
               <span class="field-error" id="err-message"></span>
             </div>
             <div class="form-error-banner" id="form-error">⚠️ Something went wrong. Check your Formspree ID or try again.</div>

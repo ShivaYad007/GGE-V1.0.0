@@ -9,7 +9,7 @@
  function applyTheme(mode) {
   if (mode === 'light') {
     document.documentElement.classList.add('light');
-    themeIcon.innerHTML = '<img src="dark-mode.png" width="20" height="20" alt="Switch to dark mode" />';
+    themeIcon.innerHTML = '<img src="dark-mode.png" width="25" height="25" alt="Switch to dark mode" />';
   } else {
     document.documentElement.classList.remove('light');
     themeIcon.innerHTML = '<img src="light-mode.png" width="40" height="40" alt="Switch to light mode" />';
@@ -69,6 +69,19 @@
       window.scrollTo({ top, behavior: 'smooth' });
     }
 
+    // ─── SCROLL CUE FUNCTIONALITY ─────────────────────────────
+    const scrollCue = document.querySelector('.scroll-cue');
+    if (scrollCue) {
+      scrollCue.addEventListener('click', () => {
+        const aboutSection = document.getElementById('about');
+        if (aboutSection) {
+          const navH = document.getElementById('navbar').offsetHeight || 72;
+          const top = aboutSection.getBoundingClientRect().top + window.scrollY - navH;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    }
+
     // ─── STICKY NAV GLASS EFFECT ──────────────────────────────
     window.addEventListener('scroll', () => {
       document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
@@ -126,7 +139,7 @@
 
     // ─── CONTACT FORM ─────────────────────────────────────────
     function clearErrors() {
-      ['name', 'email', 'message'].forEach(f => {
+      ['name', 'email', 'phone', 'message'].forEach(f => {
         const input = document.getElementById(`f-${f}`);
         const err   = document.getElementById(`err-${f}`);
         if (input) input.classList.remove('error');
@@ -139,13 +152,14 @@
       const input = document.getElementById(`f-${field}`);
       const err   = document.getElementById(`err-${field}`);
       if (input) input.classList.add('error');
-      if (err)   err.textContent = msg;
+      if (err)   err.textContent = `* ${msg}`;
     }
 
     async function submitForm() {
       clearErrors();
       const name    = document.getElementById('f-name').value.trim();
       const email   = document.getElementById('f-email').value.trim();
+      const phone   = document.getElementById('f-phone').value.trim();
       const subject = document.getElementById('f-subject').value.trim();
       const message = document.getElementById('f-message').value.trim();
 
@@ -154,6 +168,7 @@
       if (!email)   { showError('email',   'Email is required');       hasError = true; }
       else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
                       showError('email',   'Enter a valid email');      hasError = true; }
+      if (!phone)   { showError('phone',   'Phone is required');       hasError = true; }
       if (!message) { showError('message', 'Message is required');     hasError = true; }
       if (hasError) return;
 
@@ -165,7 +180,7 @@
         const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
           method:  'POST',
           headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body:    JSON.stringify({ name, email, subject, message })
+          body:    JSON.stringify({ name, email, phone, subject, message })
         });
         if (res.ok) {
           document.getElementById('contact-form').style.display = 'none';
@@ -183,7 +198,7 @@
     }
 
     function resetForm() {
-      ['f-name', 'f-email', 'f-subject', 'f-message'].forEach(id => {
+      ['f-name', 'f-email', 'f-phone', 'f-subject', 'f-message'].forEach(id => {
         const el = document.getElementById(id);
         if (el) el.value = '';
       });

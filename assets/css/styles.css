@@ -13,7 +13,7 @@
       --color-quote:   #c8deca;
       --color-accent:  #5ecb6f;
       --color-green:   #3a7d44;
-      --border-card:   rgba(94,203,111,0.1);
+      --border-card:   rgba(156, 207, 164, 0.1);
       --border-nav:    rgba(58,125,68,0.18);
       --input-bg:      rgba(255,255,255,0.04);
       --input-border:  rgba(94,203,111,0.18);
@@ -546,13 +546,8 @@
     .test-dot.active { background: var(--color-accent); width: 24px; }
 
     /* ─── CONTACT ─────────────────────────────────────────── */
-<<<<<<< HEAD
     #contact { padding: 100px 6vw; background: var(--bg-section-b); transition: background 0.35s ease; }
     .contact-inner { max-width: 1100px; margin: 0 auto; }
-=======
-    #contact { padding: 100px 6vw; background: var(--bg-section-a); transition: background 0.35s ease; }
-    .contact-inner { max-width: 1100px; margin: 0 auto; border-top: 1px solid var(--border-card); padding-top: 60px; }
->>>>>>> 679149bb169e5e8cb029508eb7a09f1397d60ace
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
     .contact-info p { font-family: 'DM Sans', sans-serif; color: var(--color-muted); margin-top: 18px; line-height: 1.8; font-size: 0.92rem; }
     .contact-details { margin-top: 40px; display: flex; flex-direction: column; gap: 20px; }

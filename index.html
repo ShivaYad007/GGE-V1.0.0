@@ -177,26 +177,90 @@
         <h2 class="section-title">End-to-end energy<br>solutions, <em>simplified.</em></h2>
         <p>Every project is handled personally — from initial audit to final commissioning. No subcontractors, no confusion.</p>
       </div>
+
+      <!-- CAROUSEL -->
+      <div class="services-carousel fade-up">
+        <div class="carousel-container">
+          <div class="carousel-slide active">
+            <img src="assets/images/OnGridSolar.png" alt="On-Grid Solar Installation">
+            <div class="carousel-overlay">
+              <h3 class="carousel-title">On-Grid Solar</h3>
+              <p class="carousel-desc">Connected to the main power grid for seamless energy management. Maximize savings with grid integration.</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="assets/images/FloatingSolar.png" alt="Floating Solar System">
+            <div class="carousel-overlay">
+              <h3 class="carousel-title">Floating Solar</h3>
+              <p class="carousel-desc">Advanced water-based solar systems for optimal efficiency. Perfect for reservoirs and large water bodies.</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="assets/images/SolarWaterPumping.png" alt="Solar Water Pumping">
+            <div class="carousel-overlay">
+              <h3 class="carousel-title">Solar Water Pumping</h3>
+              <p class="carousel-desc">Reliable off-grid water solutions powered by the sun. Ideal for agriculture and remote areas.</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="assets/images/SolarPVPower.png" alt="Solar PV Power System">
+            <div class="carousel-overlay">
+              <h3 class="carousel-title">Solar PV Power</h3>
+              <p class="carousel-desc">High-efficiency photovoltaic systems for residential and commercial use. Clean energy for every need.</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <img src="assets/images/Bess.png" alt="Battery Energy Storage System">
+            <div class="carousel-overlay">
+              <h3 class="carousel-title">BESS (Battery Storage)</h3>
+              <p class="carousel-desc">Advanced energy storage for uninterrupted power supply. Store excess energy for peak-hour usage.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carousel Navigation -->
+        <button class="carousel-btn carousel-prev" onclick="moveCarousel(-1)" aria-label="Previous slide">
+          &#10094;
+        </button>
+        <button class="carousel-btn carousel-next" onclick="moveCarousel(1)" aria-label="Next slide">
+          &#10095;
+        </button>
+
+        <!-- Carousel Dots -->
+        <div class="carousel-dots">
+          <span class="carousel-dot active" onclick="currentCarousel(0)"></span>
+          <span class="carousel-dot" onclick="currentCarousel(1)"></span>
+          <span class="carousel-dot" onclick="currentCarousel(2)"></span>
+          <span class="carousel-dot" onclick="currentCarousel(3)"></span>
+          <span class="carousel-dot" onclick="currentCarousel(4)"></span>
+        </div>
+      </div>
+
       <div class="services-grid">
         <div class="service-card fade-up" style="animation-delay:0.1s">
           <div class="service-card-top"><span class="service-icon">☀️</span><span class="service-tag">Core Service</span></div>
-          <h3>Solar Installation</h3>
+          <h3>Grid Interactive Solar</h3>
           <p>Rooftop and ground-mounted solar systems tailored to your energy profile with complete EPC delivery — residential to industrial scale.</p>
-        </div>
-        <div class="service-card fade-up" style="animation-delay:0.2s">
-          <div class="service-card-top"><span class="service-icon">🔋</span><span class="service-tag">Smart Tech</span></div>
-          <h3>Energy Storage [BESS]</h3>
-          <p>Battery Energy Storage System [BESS] is a Smart battery solution that store excess power and keep you running through outages and peak-demand hours.</p>
-        </div>
-        <div class="service-card fade-up" style="animation-delay:0.3s">
-          <div class="service-card-top"><span class="service-icon">⚡</span><span class="service-tag">AI Powered</span></div>
-          <h3>Grid Optimization</h3>
-          <p>Real-time monitoring and AI-driven load balancing that cuts waste and maximises every watt you generate.</p>
         </div>
         <div class="service-card fade-up" style="animation-delay:0.4s">
           <div class="service-card-top"><span class="service-icon">🌿</span><span class="service-tag">Compliance</span></div>
-          <h3>Carbon Auditing</h3>
-          <p>Transparent lifecycle assessments and offset strategies so you can back your green claims with hard data.</p>
+          <h3>Solar PV Power Plants</h3>
+          <p>Large-scale utility-level solar power generation facilities. Comprehensive EPC (Engineering, Procurement, Construction) services for commercial and industrial solar farms</p>
+        </div>
+         <div class="service-card fade-up" style="animation-delay:0.2s">
+          <div class="service-card-top"><span class="service-icon">💧</span><span class="service-tag">Smart Tech</span></div>
+          <h3>Solar Water Pumping Systems</h3>
+          <p>Solar-powered water pumping solutions for agriculture and rural applications. Efficient irrigation systems that eliminate diesel costs and reduce operational expenses.</p>
+        </div>
+         <div class="service-card fade-up" style="animation-delay:0.2s">
+          <div class="service-card-top"><span class="service-icon">🏗️</span><span class="service-tag">Smart Tech</span></div>
+          <h3>BOOT Model Solar Power Plants</h3>
+          <p>Build, Own, Operate, Transfer model for large-scale solar installations. End-to-end project management with guaranteed performance and handover after operational period.</p>
+        </div>
+         <div class="service-card fade-up" style="animation-delay:0.2s">
+          <div class="service-card-top"><span class="service-icon">🔋</span><span class="service-tag">Smart Tech</span></div>
+          <h3>Energy Storage [BESS]</h3>
+          <p>Battery Energy Storage System [BESS] is a Smart battery solution that store excess power and keep you running through outages and peak-demand hours.</p>
         </div>
       </div>
     </div>
@@ -251,8 +315,8 @@
           <h2 class="section-title">Let's build your<br>green future.</h2>
           <p>Whether you're curious home going solar or ready to get started, drop a message. You'll hear back directly — no bots, no team.</p>
           <div class="contact-details">
-            <div class="contact-detail"><span>📧</span><span><a href="/cdn-cgi/l/email-protection#2048454c4c4f60475245454e67524944654e455247590e494e" class="contact-email-link"><span class="__cf_email__" data-cfemail="97fff2fbfbf8d7f0e5f2f2f9d0e5fef3d2f9f2e5f0eeb9fef9">[email&#160;protected]</span></a></span></div>
-            <div class="contact-detail"><span>📍</span><span>Hyderabad, Telangana, India</span></div>
+            <div class="contact-detail"><span>📧</span><span><a href="/cdn-cgi/l/email-protection#2048454c4c4f60475245454e67524944654e455247590e494e" class="contact-email-link"><span class="__cf_email__" data-cfemail="97fff2fbfbf8d7f0e5f2f2f9d0e5fef3d2f9f2e5f0eeb9fef9">info@greengridenergy.in</span></a></span></div>
+            <div class="contact-detail"><span>📍</span><span>Villa No: 168, LaPaloma Villas, Mokila, Shankarpalli Mandal, R.R.Dist, Telangana - 501203, India</span></div>
             <div class="contact-detail"><span>🕐</span><span>Response within 24 hours</span></div>
           </div>
         </div>

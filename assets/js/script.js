@@ -190,3 +190,50 @@
       document.getElementById('contact-form').style.display  = 'flex';
       document.getElementById('submit-btn').innerHTML = 'Send Message ✉️';
     }
+
+    /* ─── CAROUSEL ─────────────────────────────────────────── */
+    let carouselIndex = 0;
+    const carouselAutoPlayDelay = 5000; // 5 seconds
+    let carouselAutoPlayTimer;
+
+    function showCarousel(n) {
+      const slides = document.querySelectorAll('.carousel-slide');
+      const dots   = document.querySelectorAll('.carousel-dot');
+      
+      if (n >= slides.length) { carouselIndex = 0; }
+      if (n < 0) { carouselIndex = slides.length - 1; }
+      
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      
+      slides[carouselIndex].classList.add('active');
+      dots[carouselIndex].classList.add('active');
+    }
+
+    function moveCarousel(n) {
+      carouselIndex += n;
+      showCarousel(carouselIndex);
+      resetCarouselTimer();
+    }
+
+    function currentCarousel(n) {
+      carouselIndex = n;
+      showCarousel(carouselIndex);
+      resetCarouselTimer();
+    }
+
+    function autoPlayCarousel() {
+      carouselIndex++;
+      showCarousel(carouselIndex);
+    }
+
+    function resetCarouselTimer() {
+      clearInterval(carouselAutoPlayTimer);
+      carouselAutoPlayTimer = setInterval(autoPlayCarousel, carouselAutoPlayDelay);
+    }
+
+    // Initialize carousel
+    if (document.querySelectorAll('.carousel-slide').length > 0) {
+      showCarousel(carouselIndex);
+      resetCarouselTimer();
+    }

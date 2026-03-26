@@ -14,6 +14,7 @@
       --color-accent:  #5ecb6f;
       --color-green:   #3a7d44;
       --border-card:   rgba(156, 207, 164, 0.1);
+      --hr-line-top:   rgba(181, 233, 201, 0.575);
       --border-nav:    rgba(58,125,68,0.18);
       --input-bg:      rgba(255,255,255,0.04);
       --input-border:  rgba(94,203,111,0.18);
@@ -35,6 +36,7 @@
       --color-accent:  #2a8a3a;
       --color-green:   #2a7a34;
       --border-card:   rgba(42,138,58,0.15);
+      --hr-line-top:   rgba(42,138,58,0.15);
       --border-nav:    rgba(42,138,58,0.2);
       --input-bg:      rgba(255,255,255,0.8);
       --input-border:  rgba(42,138,58,0.25);
@@ -342,7 +344,7 @@
     .about-pillar p { font-family: 'DM Sans', sans-serif; font-size: 0.83rem; color: var(--color-muted); line-height: 1.65; }
 
     /* Core values */
-    .about-values-wrap { border-top: 1px solid var(--border-card); padding-top: 64px; }
+    .about-values-wrap { border-top: 1px solid var(--hr-line-top); padding-top: 64px; }
     .about-values-header { margin-bottom: 40px; }
     .about-values-title { font-family: 'DM Serif Display', serif; font-size: clamp(1.5rem, 3vw, 2.2rem); color: var(--color-text); margin-top: 10px; line-height: 1.2; }
     .about-values-title em { font-style: italic; color: var(--color-accent); }
@@ -489,7 +491,7 @@
     .service-card p { font-family: 'DM Sans', sans-serif; font-size: 0.88rem; color: var(--color-muted); line-height: 1.75; }
 
     /* Support Services Section */
-    .support-services-section { margin-top: 80px; padding-top: 80px; border-top: 1px solid var(--border-card); }
+    .support-services-section { margin-top: 80px; padding-top: 80px; border-top: 1px solid var(--hr-line-top); }
     .support-header { margin-bottom: 60px; }
     .support-header p { font-family: 'DM Sans', sans-serif; color: var(--color-muted); max-width: 480px; line-height: 1.7; font-size: 0.9rem; margin-top: 16px; }
 
@@ -593,7 +595,6 @@
 
     /* ─── FOOTER ──────────────────────────────────────────── */
     footer { padding: 36px 6vw; background: var(--bg-footer); transition: background 0.35s ease; }
-    .footer-divider { border: none; border-top: 1px solid var(--border-card); margin-bottom: 28px; }
     .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
     .footer-logo { display: flex; align-items: center; gap: 10px; }
     .footer-logo .logo-icon { width: 100px; height: 60px; }

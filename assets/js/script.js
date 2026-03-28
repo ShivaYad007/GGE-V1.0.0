@@ -1,5 +1,5 @@
 // ─── CONFIG ───────────────────────────────────────────────
-    const FORMSPREE_ID = "mzdjpdpb";
+    const FORMSPREE_ID = "maqlqdeb";
     // ──────────────────────────────────────────────────────────
 
     // ─── THEME TOGGLE ─────────────────────────────────────────
@@ -9,10 +9,10 @@
  function applyTheme(mode) {
   if (mode === 'light') {
     document.documentElement.classList.add('light');
-    themeIcon.innerHTML = '<img src="dark-mode.png" width="25" height="25" alt="Switch to dark mode" />';
+    themeIcon.innerHTML = '<img src="assets/images/dark-mode.png" width="25" height="25" alt="Switch to dark mode" />';
   } else {
     document.documentElement.classList.remove('light');
-    themeIcon.innerHTML = '<img src="light-mode.png" width="40" height="40" alt="Switch to light mode" />';
+    themeIcon.innerHTML = '<img src="assets/images/light-mode.png" width="40" height="40" alt="Switch to light mode" />';
   }
   localStorage.setItem('gg-theme', mode);
 }
@@ -169,6 +169,7 @@
       else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
                       showError('email',   'Enter a valid email');      hasError = true; }
       if (!phone)   { showError('phone',   'Phone is required');       hasError = true; }
+      else if(phone.length < 10) { showError('phone', 'Phone must be 10 digits'); hasError = true; }
       if (!message) { showError('message', 'Message is required');     hasError = true; }
       if (hasError) return;
 
@@ -205,7 +206,9 @@
       clearErrors();
       document.getElementById('success-card').style.display  = 'none';
       document.getElementById('contact-form').style.display  = 'flex';
-      document.getElementById('submit-btn').innerHTML = 'Send Message ✉️';
+      const btn = document.getElementById('submit-btn');
+      btn.innerHTML = 'Send Message ✉️';
+      btn.disabled = false;
     }
 
     /* ─── CAROUSEL ─────────────────────────────────────────── */

@@ -1,6 +1,9 @@
 // ─── CONFIG ───────────────────────────────────────────────
-    const FORMSPREE_ID = "maqlqdeb";
-    // ──────────────────────────────────────────────────────────
+
+    // ─── CONFIG ───────────────────────────────────────────────
+    const EMAILJS_SERVICE_ID  = "service_f32avtm";   // e.g. "service_xxxxxxx"
+    const EMAILJS_TEMPLATE_ID = "template_8lmdzja";  // e.g. "template_xxxxxxx"
+    const EMAILJS_PUBLIC_KEY  = "BUFtI5ZyWy5vA-9ZA";   // e.g. "xxxxxxxxxxxxxxxxxxxx"
 
     // ─── THEME TOGGLE ─────────────────────────────────────────
     const themeToggle = document.getElementById('theme-toggle');
@@ -178,20 +181,23 @@
       btn.innerHTML = '<span class="spinner"></span>Sending…';
 
       try {
-        const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-          method:  'POST',
-          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-          body:    JSON.stringify({ name, email, phone, subject, message })
-        });
-        if (res.ok) {
-          document.getElementById('contact-form').style.display = 'none';
-          document.getElementById('success-card').style.display  = 'block';
-        } else {
-          document.getElementById('form-error').style.display = 'block';
-          btn.disabled  = false;
-          btn.innerHTML = 'Send Message ✉️';
-        }
+        await emailjs.send(
+          EMAILJS_SERVICE_ID,
+          EMAILJS_TEMPLATE_ID,
+          {
+            from_name:    name,
+            from_email:   email,
+            from_phone:   phone,
+            subject:      subject || 'New enquiry from GreenGrid website',
+            message:      message,
+            reply_to:     email
+          },
+          EMAILJS_PUBLIC_KEY
+        );
+        document.getElementById('contact-form').style.display = 'none';
+        document.getElementById('success-card').style.display  = 'block';
       } catch {
+        console.error('EmailJS error:', err);
         document.getElementById('form-error').style.display = 'block';
         btn.disabled  = false;
         btn.innerHTML = 'Send Message ✉️';
